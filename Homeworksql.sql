@@ -48,7 +48,7 @@ SELECT last_name,count(last_name) FROM actor
 group by last_name;
 
 
-*/*  4b. List last names of actors and the number of actors who have that last name, 
+/*  4b. List last names of actors and the number of actors who have that last name, 
 but only for names that are shared by at least two actors
  */
 SELECT last_name,count(last_name) FROM actor 
@@ -85,6 +85,7 @@ FROM staff as s JOIN address as a
  SELECT concat(s.first_name,s.last_name) as 'Staff Member',sum(p.amount) as 'Total Amount'
  FROM staff as s JOIN payment as p 
     ON p.staff_id=s.staff_id
+where extract(year from p.payment_date)=2005 and extract(month from payment_date)=08
 GROUP BY p.staff_id;
 
 /* * 6c. List each film and the number of actors who are listed for that film. Use tables `film_actor` and `film`. Use inner join. */
