@@ -1,2 +1,2 @@
 # Sakila_sql
-SQl homework 
+A SQL project that demonstrate to do query, update and reorganize data using joins .
